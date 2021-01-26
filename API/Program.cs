@@ -39,7 +39,9 @@ namespace API
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
-                {
+                {   
+                    //THIS MUST BE UNCOMMENTED WHEN DEPLOYING TO LINUX SERVER
+                    //webBuilder.UseKestrel(x => x.AddServerHeader = false);
                     webBuilder.UseStartup<Startup>();
                 });
     }
